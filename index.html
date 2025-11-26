@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>董阳 - 个人简历</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Microsoft YaHei", sans-serif;
+        background: #f5f8ff;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* ------------------ 页面主容器 ------------------ */
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        border-radius: 15px;
+        margin-top: 30px;
+
+        /* 淡入动画 */
+        opacity: 0;
+        animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ------------------ 头像区域 ------------------ */
+    header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        border-bottom: 2px solid #e6ecff;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    header img {
+        width: 140px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 4px solid #d6e4ff;
+
+        /* 图片进入动画 */
+        opacity: 0;
+        animation: avatarIn 1s ease-out forwards;
+        animation-delay: 0.1s;
+    }
+
+    @keyframes avatarIn {
+        0% { opacity: 0; transform: scale(0.85); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+
+    header h1 {
+        font-size: 32px;
+        margin: 0;
+        color: #003a9e;
+    }
+
+    /* ------------------ 标题样式 + 动态竖线 ------------------ */
+    h2 {
+        margin-top: 25px;
+        color: #003a9e;
+        padding-left: 15px;
+        position: relative;
+    }
+
+    h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 60%;
+        width: 0;
+        background: #3d7dff;
+        border-radius: 4px;
+        transform: translateY(-50%);
+        animation: lineGrow 0.5s ease-out forwards;
+    }
+
+    @keyframes lineGrow {
+        from { width: 0; opacity: 0; }
+        to { width: 5px; opacity: 1; }
+    }
+
+    /* ------------------ 列表 / 基本文本 ------------------ */
+    .section {
+        margin-top: 15px;
+
+        opacity: 0;
+        animation: fadeUp 0.8s ease-out forwards;
+        animation-delay: 0.15s;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    /* ------------------ 项目折叠卡片 ------------------ */
+    .project {
+        border: 1px solid #dfe6ff;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        background: #f8faff;
+
+        opacity: 0;
+        animation: fadeUp 0.8s ease-out forwards;
+        animation-delay: 0.2s;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 按钮光效动画 */
+    .toggle {
+        padding: 5px 12px;
+        background: #3d7dff;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .toggle:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(61,125,255,0.4);
+    }
+
+    /* ------------------ 滑动折叠动画 ------------------ */
+    .project-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        margin-top: 10px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    /* ------------------ 响应式布局 ------------------ */
+    @media(max-width: 600px) {
+        header { flex-direction: column; text-align: center; }
+    }
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <img src="6.jpg" alt="我的照片">
+    <div>
+        <h1>董阳</h1>
+        <p>求职意向：前端开发</p>
+        <p>出生年月：2004.02</p>
+        <p>邮箱：kekedy0212@gmail.com | 电话：17717786833</p>
+        <p>所在城市：陕西省西安市</p>
+    </div>
+</header>
+
+<!-- 教育背景 -->
+<h2>教育背景</h2>
+<div class="section">
+    <p><b>2023.09 - 2025.10　西安电子科技大学　软件工程 / 本科</b></p>
+    <ul>
+        <li>GPA 3.8/4.0，均分 86.8，专业排名前 10%</li>
+        <li>CET-4：634，CET-6：538，雅思 6.5（L7.5 / R6.5 / W6.5），大学生英语竞赛三等奖</li>
+        <li>核心课程：程序设计（97）、面向对象（93）、数据结构、操作系统等</li>
+        <li>算法基础扎实，熟练掌握 C++、STL、时间复杂度分析，力扣完成 50 道题并持续更新</li>
+    </ul>
+</div>
+
+<!-- 技能 -->
+<h2>专业技能</h2>
+<div class="section">
+    <ul>
+        <li><b>编程基础：</b>熟练 C/C++，熟悉 STL、文件系统、面向对象程序设计</li>
+        <li><b>数据库：</b>掌握 MySQL，具备数据库设计与 SQL 操作经验</li>
+        <li><b>系统能力：</b>熟悉 Linux 基础命令与开发环境</li>
+        <li><b>语言能力：</b>英语六级、雅思 6.5</li>
+    </ul>
+</div>
+
+<!-- 项目经历 -->
+<h2>项目经历</h2>
+
+<div class="project">
+    <div class="project-header">
+        <h3>网上购物系统（C++） | 2025.04–2025.06</h3>
+        <button class="toggle">展开</button>
+    </div>
+    <div class="project-content">
+        <ul>
+            <li><b>系统功能：</b>负责整体架构与模块设计，实现顾客、管理员、商品、购物车、订单等核心模块</li>
+            <li><b>促销功能：</b>支持限时折扣、订单满减；实现促销叠加与价格动态刷新</li>
+            <li><b>数据持久化：</b>用户、商品、订单等信息文件化保存，确保程序关闭后仍可读取</li>
+            <li><b>性能优化：</b>改进商品与订单查询算法，使响应时间降低约 40%</li>
+            <li><b>用户体验：</b>商品列表新增“促销标签”功能，提升可读性与操作效率</li>
+            <li><b>文档与测试：</b>编写系统测试用例及《系统设计说明书》《使用手册》</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 校园经历 -->
+<h2>校园经历</h2>
+<div class="section">
+    <p><b>西安电子科技大学　宿舍网格员 / 生活委员 / 入党积极分子 | 2023.09–2025.10</b></p>
+    <ul>
+        <li>负责宿舍管理、卫生检查，带领宿舍多次评为“绿牌宿舍”</li>
+        <li>协助书院收集同学生活反馈并提交 2 份改进建议</li>
+        <li>组织学习互助、团建活动，营造积极学习氛围</li>
+        <li>参与校内外志愿活动 3 次，践行服务精神</li>
+    </ul>
+</div>
+
+<!-- 自我评价 -->
+<h2>自我评价</h2>
+<div class="section">
+    <ul>
+        <li>学习能力强，能快速掌握新技术并运用到实际项目中</li>
+        <li>编程基础扎实，逻辑思维清晰，具备良好的问题分析与解决能力</li>
+        <li>责任心强，有团队协作与沟通能力</li>
+        <li>对前端开发与软件工程具有浓厚兴趣</li>
+    </ul>
+</div>
+
+<footer>
+    © 2025 董阳 — 前端开发个人简历
+</footer>
+
+</div>
+
+<script>
+    /* 滑动折叠动画 */
+    document.querySelectorAll(".toggle").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const content = btn.parentElement.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                btn.textContent = "展开";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                btn.textContent = "收起";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
